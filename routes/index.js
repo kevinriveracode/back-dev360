@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.post('/contact', function(req, res, next) {
+router.get('/contact', function(req, res, next) {
   let transporter = nodemailer.createTransport({
     service:'Gmail',
     auth: {
@@ -29,7 +29,7 @@ router.post('/contact', function(req, res, next) {
       res.status(200).jsonp(req.body);
     }
   });
-  res.send(200);
+  res.send('okey');
 });
 
 module.exports = router;
